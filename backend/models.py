@@ -36,6 +36,7 @@ class GameSession(BaseModel):
 
 class StartGameRequest(BaseModel):
     session_id: str
+    starter_image_url: str | None = None
 
 
 class ActionRequest(BaseModel):
@@ -64,6 +65,7 @@ class TurnResponse(BaseModel):
     video_status: str
     video_reason: str
     scene_observation: SceneObservation | None = None
+    world_summary: str | None = None
     estimated_video_cost_usd: float = 0.0
     video_budget: VideoBudgetStatus
 
